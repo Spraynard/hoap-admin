@@ -45,7 +45,7 @@ class UpdateVolunteersTable extends Migration
             $table->renameColumn('first_name', 'firstName');
             $table->renameColumn('last_name', 'lastName');
 
-            $table->enum('gender', ['Male', 'Female', 'Other'])
+            $table->enum('gender', ['Male', 'Female', 'Other', 'Unknown'])
                 ->default('Other')->change();
 
             $table->renameColumn('background_check', 'backgroundCheck');
