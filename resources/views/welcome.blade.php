@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Code For Good: HOAP
                 </div>
 
                 <div class="links">
