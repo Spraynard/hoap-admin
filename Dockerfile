@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
  php7.2-opcache \
  php7.2-mysql \
  php7.2-readline \
+ php7.2-mbstring \
  php-imagick \
  php-redis \
  php-igbinary \
