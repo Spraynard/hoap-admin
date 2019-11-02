@@ -20,7 +20,7 @@ class CreateTimeEntriesTable extends Migration
             $table->foreign('volunteer_id')->references('id')->on('volunteers');
             
             $table->date('date');
-            $table->decimal('numHours', 12, 2);
+            $table->decimal('duration_hours', 4, 2);
             $table->string('description');
 
             $table->timestamps();
