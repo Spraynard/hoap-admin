@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProgramDataRowTypeSeeder::class);
         $this->call(ParticipantDataRowTypeSeeder::class);
         $this->call(ChildDataRowTypeSeeder::class);
+        $this->call(VolunteersTableSeeder::class);
+        $this->call(TimeEntriesTableSeeder::class);
     }
 }
