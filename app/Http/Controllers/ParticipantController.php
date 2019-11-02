@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Participant;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ParticipantFormSubmission;
 
 use Illuminate\Http\Request;
 
@@ -28,7 +29,10 @@ class ParticipantController extends Controller
     {
         $this->validate($request, [
             'first_name'=>'required',
-            'last_name'=>'required'
+            'last_name'=>'required',
+            'number_of_children' => 'required|numeric',
+            'dob' => 'required|date',
+            'phone' => 'required'
 
         ]);
 
@@ -48,9 +52,12 @@ class ParticipantController extends Controller
         $participant->number_of_children = $request->input('number_of_children') ? $request->input('number_of_children') : "";
         $participant->referrer = $request->input('referrer') ? $request->input('referrer') : "";
 
-        $participant->save();
+        $saved = $participant->save();
+        if($saved && env('FORM_SUBMISSION_EMAIL')) {
+            Mail::to(env('FORM_SUBMISSION_EMAIL'))->send(new ParticipantFormSubmission($participant));
+        }
 
 
-        return redirect('/participants')->with('success', 'Participant Created');
+        return redirect()->back()->with('success', 'Form successfully submitted!');
     }
 }
