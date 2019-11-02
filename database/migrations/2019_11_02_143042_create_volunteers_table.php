@@ -22,8 +22,8 @@ class CreateVolunteersTable extends Migration
             $table->string('lastName');
             $table->date('dob');
 
-            $table->enum('gender', ['Unknown', 'Male', 'Female', 'Other'])
-                ->default('Unknown');
+            $table->enum('gender', ['Male', 'Female', 'Other'])
+                ->default('Other');
 
             $table->string('email'); // validation?
             $table->string('phone'); // validation?
@@ -34,7 +34,9 @@ class CreateVolunteersTable extends Migration
                 ->default(false);
             $table->boolean('backgroundCheck')
                 ->default(false);
-            $table->string('ethnicity');
+
+            $table->enum('ethnicity', ['White', 'Hispanic', 'Black', 'Asian or Pacific Islander', 'Native American or Alaskan Native', 'Other'])
+                ->default('Other');
 
             $table->boolean('receiveMarketingMail')
                 ->default(true);
