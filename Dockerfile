@@ -20,10 +20,7 @@ RUN apt-get update && apt-get install -y \
  php7.2-opcache \
  php7.2-mysql \
  php7.2-readline \
-<<<<<<< HEAD
  php7.2-mbstring \
-=======
->>>>>>> c8b9454fb61d9feacc39210b1743f3b552ed5e76
  php-imagick \
  php-redis \
  php-igbinary \
