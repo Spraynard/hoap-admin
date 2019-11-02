@@ -23,5 +23,4 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::resource('applicants', 'ApplicantController');
 Route::resource('participants', 'ParticipantController');
