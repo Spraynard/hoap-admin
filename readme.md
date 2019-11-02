@@ -54,6 +54,7 @@ The items listed below are the general models that are available to have adminis
 1. Child - Children of participants
 1. Donor - People who have donated to HOAP
 1. Volunteer - People performing free services for the HOAP organization
+1. Community Partner - Agencies/contacts with contact information including county & notes section
 
 #### Supplemental
 
@@ -61,8 +62,8 @@ The items listed below are the general models that are available to have adminis
 
 Actions that some people/users can take in our application that should be able to be recorded.
 
-1. Donation / Payment - Accounts of donations given to the hoap organization.
-1. TimeEntry - Volunteer time
+1. Donation / Payment - Accounts of donations given to the hoap organization. (one time vs recurring, in kind, & amount of gift)
+1. TimeEntry - Volunteer time (date, number of hours, description) (connected to a volunteer)
 
 ##### Person / User Demographics
 
@@ -73,6 +74,8 @@ Statistical data relating to the model that the demographic is for. The demograp
 	- Enrolled or Completed Secondary Education
 	- How many children?
 	- Annual Income
+    - Enrollment date
+    - Exit date
 2. ChildDemographic
 	- Dad Involved?
 	- Child Care / School Information
@@ -80,6 +83,7 @@ Statistical data relating to the model that the demographic is for. The demograp
 3. DonorDemographic
 
 4. VolunteerDemographic ( Not really sure if this will be needed )
+    - Start date
 
 **Developers Note**: I haven't really scoped out if there is a need for the separation of these demographic entities, but we'll see.
 
@@ -92,6 +96,8 @@ Aside from the specific metrics that are listed with the individual demographic,
 5. Email
 6. Phone Number
 7. Address
+8. County
+9. Notes
 
 ### Reports
 
