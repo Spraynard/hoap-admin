@@ -29,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         Voyager::addAction(\App\Actions\CsvExportAll::class);
         Voyager::addAction(\App\Actions\CsvExportSelected::class);
+        Voyager::addAction(\App\Actions\ConvertVolunteerToDonor::class);
+        Voyager::addAction(\App\Actions\ConvertDonorToVolunteer::class);
+
     }
 }

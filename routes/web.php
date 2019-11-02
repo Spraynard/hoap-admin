@@ -24,3 +24,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::resource('participants', 'ParticipantController');
+
+Route::get('donor/create_from_volunteer/{id}', 'DonorController@createFromVolunteer')->name('donor.createFromVolunteer');
+Route::get('volunteer/create_from_donor/{id}', 'VolunteerController@createFromDonor')->name('volunteer.createFromDonor');
