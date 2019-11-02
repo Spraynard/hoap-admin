@@ -210,7 +210,7 @@ class VolunteersTableSeeder extends Seeder
                 'details'      => '{"on":"Yes","off":"No","checked":"false"}',
                 'order'        => 16,
             ],
-            'start-date' => [
+            'start_date' => [
                 'type'         => 'date',
                 'display_name' => 'Start Date',
                 'required'     => 0,
