@@ -3,25 +3,20 @@
 @section('content')
         <div class="content">
           <div class="title m-b-md">
-            New Applicant
+            New Participant
           </div>
           <div class="card">
             <div class="card-body">
-                {!! Form::open(['action' => 'ApplicantController@store', 'method' => 'POST']) !!}
-                <!-- Form Title -->
-                <div class="form-group md-form">
-                    {{ Form::label('title', 'Title') }}
-                    {{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => '']) }}
-                </div>
+                {!! Form::open(['action' => 'ParticipantController@store', 'method' => 'POST']) !!}
                   <!-- First Name -->
                   <div class="form-group">
-                    {{ Form::label('firstname', 'First Name') }}
-                    {{ Form::text('firstname', '', ['class' => 'form-control', 'placeholder' => '']) }}
+                    {{ Form::label('first_name', 'First Name') }}
+                    {{ Form::text('first_name', '', ['class' => 'form-control', 'placeholder' => '']) }}
                 </div>
                 <!-- Last Name -->
                 <div class="form-group">
-                    {{ Form::label('lastname', 'Last Name') }}
-                    {{ Form::text('lastname', '', ['class' => 'form-control', 'placeholder' => '']) }}
+                    {{ Form::label('last_name', 'Last Name') }}
+                    {{ Form::text('last_name', '', ['class' => 'form-control', 'placeholder' => '']) }}
                 </div>
                 <!-- Date of Birth -->
                 <div class="form-group">
@@ -31,7 +26,7 @@
                 <!-- Gender -->
                 <div class="form-group">
                     {{ Form::label('gender', 'Gender') }}
-                    {{ Form::select('gender', ['M' => 'Male', 'F' => 'Female', 'O' => 'Other']) }}
+                    {{ Form::select('gender', ['male' => 'Male', 'female' => 'Female', 'other' => 'Other']) }}
                 </div>
                 <!-- Email -->
                 <div class="form-group">
@@ -45,33 +40,33 @@
                 </div>
                 <!-- OK to Text -->
                 <div class="form-group">
-                    {{ Form::label('text', 'Okay to text?') }}
-                    {{ Form::checkbox('text', '', ['class' => 'form-control', 'placeholder' => '']) }}
+                    {{ Form::label('ok_to_text', 'Okay to text?') }}
+                    {{ Form::checkbox('ok_to_text', '', ['class' => 'form-control', 'placeholder' => '', 'value'=>false]) }}
                 </div>
                 <!-- Last Grad Completed? -->
                 <div class="form-group">
-                    {{ Form::label('grade', 'Last grade completed?') }}
-                    {{ Form::select('grade', ['1st' => '1st', '2nd' => '2nd', '3rd' => '3rd', '4th' => '4th', '5th' => '5th', '6th' => '6th', '7th' => '7th', '8th' => '8th', '9th' => '9th', '10th' => '10th', '11th' => '11th', '12th' => '12th']) }}
+                    {{ Form::label('last_grade_completed', 'Last grade completed?') }}
+                    {{ Form::select('last_grade_completed', ['1st' => '1st', '2nd' => '2nd', '3rd' => '3rd', '4th' => '4th', '5th' => '5th', '6th' => '6th', '7th' => '7th', '8th' => '8th', '9th' => '9th', '10th' => '10th', '11th' => '11th', '12th' => '12th']) }}
                 </div>
                 <!-- Employment -->
                 <div class="form-group">
-                    {{ Form::label('employment', 'Employment Status') }}
-                    {{ Form::select('employment', ['full-time' => 'Full Time', 'part-time' => 'Part Time', 'not-employed' => 'Not Employed']) }}
+                    {{ Form::label('employment_status', 'Employment Status') }}
+                    {{ Form::select('employment_status', ['employed' => 'Employed', 'unemployed' => 'Unemployed']) }}
                 </div>
                 <!-- Income -->
                 <div class="form-group">
-                    {{ Form::label('income', 'Annual Income') }}
-                    {{ Form::number('income', '', ['class' => 'form-control', 'placeholder' => '']) }}
+                    {{ Form::label('annual_income', 'Annual Income') }}
+                    {{ Form::number('annual_income', '', ['class' => 'form-control', 'placeholder' => '']) }}
                 </div>
                 <!-- Children -->
                 <div class="form-group">
-                    {{ Form::label('children', 'Number of Children') }}
-                    {{ Form::number('children', '', ['class' => 'form-control', 'placeholder' => '']) }}
+                    {{ Form::label('number_of_children', 'Number of Children') }}
+                    {{ Form::number('number_of_children', '', ['class' => 'form-control', 'placeholder' => '']) }}
                 </div>
                 <!-- How Did You Hear -->
                 <div class="form-group">
-                    {{ Form::label('howdidyouhear', 'How did you hear about us?') }}
-                    {{ Form::textarea('howdidyouhear', '', ['class' => 'form-control', 'placeholder' => '']) }}
+                    {{ Form::label('referrer', 'How did you hear about us?') }}
+                    {{ Form::textarea('referrer', '', ['class' => 'form-control', 'placeholder' => '']) }}
                 </div>
                 <div class="submit-button">
                     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}

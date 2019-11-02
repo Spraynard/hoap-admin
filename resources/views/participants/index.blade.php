@@ -3,15 +3,15 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1>Applicants</h1>
-  @if( count($applicants) > 0 )
-    @foreach($applicants as $applicant)
+  <h1>Participants</h1>
+  @if( count($participants) > 0 )
+    @foreach($participants as $participant)
       <div class="well">
-        <h3><a href="/applicants/{{ $applicant->id }}">{{ $applicant->firstname }}</a></h3>
+        <h3><a href="/participants/{{ $participant->id }}">{{ $participant->first_name }}</a></h3>
       </div>
       @endforeach
 
   @else
-    <p>No Applicants found</p>
+    <p>No Participants found</p>
   @endif 
 @endsection

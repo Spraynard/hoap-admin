@@ -24,3 +24,4 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::resource('applicants', 'ApplicantController');
+Route::resource('participants', 'ParticipantController');
