@@ -15,7 +15,6 @@ class CreateApplicantsTable extends Migration
     {
         Schema::create('applicants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
             $table->string('firstname');
             $table->string('lastname');
             $table->date('dob');
