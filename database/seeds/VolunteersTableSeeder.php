@@ -286,7 +286,7 @@ class VolunteersTableSeeder extends Seeder
             'display_name_singular' => 'Volunteer',
             'display_name_plural'   => 'Volunteers',
             'icon'                  => 'voyager-people',
-            'model_name'            => 'App\\Volunteer',
+            'model_name'            => 'App\\Models\\Volunteer',
             'controller'            => '',
             'generate_permissions'  => 1,
             'server_side'           => 1,

@@ -40,7 +40,7 @@ class TimeEntriesTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"model":"\\\App\\\Volunteer","table":"volunteers","type":"belongsTo","column":"volunteer_id","key":"id","label":"first_name"}',
+                'details'      => '{"model":"\\\App\\\Models\\\Volunteer","table":"volunteers","type":"belongsTo","column":"volunteer_id","key":"id","label":"first_name"}',
                 'order'        => 2,
             ] ,
             'volunteer_id' => [
@@ -143,7 +143,7 @@ class TimeEntriesTableSeeder extends Seeder
             'display_name_singular' => 'Time Entry',
             'display_name_plural'   => 'Time Entries',
             'icon'                  => 'voyager-people',
-            'model_name'            => 'App\\TimeEntry',
+            'model_name'            => 'App\\Models\\TimeEntry',
             'controller'            => '',
             'generate_permissions'  => 1,
             'server_side'           => 1,
