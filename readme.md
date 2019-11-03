@@ -101,11 +101,7 @@ Aside from the specific metrics that are listed with the individual demographic,
 
 ### Reports
 
-Administrators should be able to push a button that e-mails (and/or puts up for download) a report of most if not all of the information that we have, most likely in a 1 month, 3 month, and 6 month window.
-
-This most likely will involve some stored procedures within the database?
-
-*Implementation Details TBD*
+CSV dumps of model data.
 
 ## Authors and Acknowledgement
 

@@ -1,6 +1,19 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | HOAP Administrator Email
+    |--------------------------------------------------------------------------
+    |
+    | This address is the main e-mail used by HOAP personnel to receive correspondence from
+    | public routes.
+    |
+    | So, whenever an `Applicant` or `Volunteer` applies for one of those items, the e-mail
+    | specified here should recieve a message.
+    |
+    */
+   'hoap_administrator_email' => env('FORM_SUBMISSION_EMAIL', 'admin@hoapinc.com'),
 
     /*
     |--------------------------------------------------------------------------
