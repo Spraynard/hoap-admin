@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Volunteer;
 
 class TimeEntry extends Model
 {
@@ -11,6 +12,6 @@ class TimeEntry extends Model
      */
     public function volunteer()
     {
-        return $this->belongsTo('App\Volunteer');
+        return $this->belongsTo(Volunteer::class);
     }
 }
