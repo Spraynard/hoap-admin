@@ -23,4 +23,6 @@ Route::group(['prefix' => 'public'], function() {
 });
 
 Route::get('donor/create_from_volunteer/{id}', 'DonorController@createFromVolunteer')->name('donor.createFromVolunteer');
+Route::get('donor/create_from_participant/{id}', 'DonorController@createFromParticipant')->name('donor.createFromParticipant');
 Route::get('volunteer/create_from_donor/{id}', 'VolunteerController@createFromDonor')->name('volunteer.createFromDonor');
+Route::get('volunteer/create_from_participant/{id}', 'VolunteerController@createFromParticipant')->name('volunteer.createFromParticipant');

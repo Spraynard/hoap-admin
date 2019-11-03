@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         Voyager::addAction(\App\Actions\CsvExportSelected::class);
         Voyager::addAction(\App\Actions\ConvertVolunteerToDonor::class);
         Voyager::addAction(\App\Actions\ConvertDonorToVolunteer::class);
-
+        Voyager::addAction(\App\Actions\ConvertParticipantToVolunteer::class);
+        Voyager::addAction(\App\Actions\ConvertParticipantToDonor::class);
     }
 }
