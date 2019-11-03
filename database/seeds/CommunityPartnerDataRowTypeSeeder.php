@@ -39,7 +39,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 2,
             ],
             'contact_name' => [
@@ -51,7 +55,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 3,
             ],
             'first_name' => [
@@ -63,7 +71,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 4,
             ],
             'last_name' => [
@@ -75,7 +87,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 5,
             ],
             'email' => [
@@ -87,7 +103,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required", "email"]
+                    ]
+                ]),
                 'order'        => 6,
             ],
             'phone' => [
@@ -99,7 +119,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 7,
             ],
             'county' => [
@@ -171,7 +195,11 @@ class CommunityPartnerDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["numeric"]
+                    ]
+                ]),
                 'order'        => 13,
             ],
             'notes' => [
