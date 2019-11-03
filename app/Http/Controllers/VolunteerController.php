@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Donor;
-use App\Volunteer;
+use App\Models\Volunteer;
 
 class VolunteerController extends Controller
 {
