@@ -63,7 +63,14 @@ class ChildDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"],
+                        "messages" => [
+                            "required" => "You must enter a :attribute"
+                        ]
+                    ]
+                ]),
                 'order'        => 4,
             ],
             'last_name' => [
@@ -75,12 +82,19 @@ class ChildDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"],
+                        "messages" => [
+                            "required" => "You must enter a :attribute"
+                        ]
+                    ]
+                ]),
                 'order'        => 5,
             ],
             'dob' => [
                 'type'         => 'date',
-                'display_name' => 'Date of Birth(or expected due date)',
+                'display_name' => 'Date of Birth (or expected due date)',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,
@@ -89,7 +103,10 @@ class ChildDataRowTypeSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => json_encode([
                     "validation" => [
-                        "rule" => ["required", "date"]
+                        "rule" => ["required", "date"],
+                        "messages" => [
+                            "required" => "You must enter a :attribute"
+                        ]
                     ]
                 ]),
                 'order'        => 6,
@@ -105,7 +122,10 @@ class ChildDataRowTypeSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => json_encode([
                     "validation" => [
-                        "rule" => ["required"]
+                        "rule" => ["required"],
+                        "messages" => [
+                            "required" => "You must enter a :attribute"
+                        ]
                     ],
                     "default" => "",
                     "options" => ["" => "(Select One)", "male" => "Male", "female" => "Female", "other" => "Other", "unknown" => "Unknown"]
@@ -123,7 +143,10 @@ class ChildDataRowTypeSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => json_encode([
                     "validation" => [
-                        "rule" => ["email"]
+                        "rule" => ["email"],
+                        "messages" => [
+                            "email" => "Email is invalid."
+                        ]
                     ]
                 ]),
                 'order'        => 8,
