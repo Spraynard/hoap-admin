@@ -10,7 +10,7 @@ class DonorController extends Controller
 {
     public function createFromVolunteer($volunteerId)
     {
-        $volunteer = Volunteer::find($volunteerId);
+        $volunteer = Volunteer::findOrFail($volunteerId);
 
         $donor = new Donor;
 
