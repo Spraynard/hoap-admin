@@ -40,7 +40,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 4,
+                'order'        => 2,
             ],
             'last_name' => [
                 'type'         => 'text',
@@ -52,7 +52,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 5,
+                'order'        => 3,
             ],
             'dob' => [
                 'type'         => 'date',
@@ -64,7 +64,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 6,
+                'order'        => 4,
             ],
             'gender' => [
                 'type'         => 'select_dropdown',
@@ -76,7 +76,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{"default":"","options":{"":"(Select One)","male":"Male","female":"Female","other":"Other","unknown":"Unknown"}}',
-                'order'        => 7,
+                'order'        => 5,
             ],
             'ethnicity' => [
                 'type'         => 'select_dropdown',
@@ -88,7 +88,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{"default":"","options":{"":"(Select One)","White":"White","Hispanic":"Hispanic","Black":"Black", "Asian or Pacific Islander": "Asian or Pacific Islander", "Native American or Alaskan Native": "Native American or Alaskan Native", "Other": "Other"}}',
-                'order'        => 7,
+                'order'        => 6,
             ],
             'email' => [
                 'type'         => 'text',
@@ -100,7 +100,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 8,
+                'order'        => 7,
             ],
             'phone' => [
                 'type'         => 'text',
@@ -112,7 +112,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 9,
+                'order'        => 8,
             ],
             'county' => [
                 'type'         => 'text',
@@ -124,7 +124,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 13,
+                'order'        => 9,
             ],
             'line_1' => [
                 'type'         => 'text',
@@ -136,7 +136,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 14,
+                'order'        => 10,
             ],
             'line_2' => [
                 'type'         => 'text',
@@ -148,7 +148,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 15,
+                'order'        => 11,
             ],
             'city' => [
                 'type'         => 'text',
@@ -160,7 +160,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 16,
+                'order'        => 12,
             ],
             'state' => [
                 'type'         => 'text',
@@ -172,7 +172,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 17,
+                'order'        => 13,
             ],
             'zip' => [
                 'type'         => 'text',
@@ -184,7 +184,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 18,
+                'order'        => 14,
             ],
             'background_check' => [
                 'type'         => 'checkbox',
@@ -196,7 +196,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{"on":"Yes","off":"No","checked":"false"}',
-                'order'        => 16,
+                'order'        => 15,
             ],
             'active' => [
                 'type'         => 'checkbox',
@@ -220,7 +220,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{}',
-                'order'        => 6,
+                'order'        => 17,
             ],
             'ok_to_text' => [
                 'type'         => 'checkbox',
@@ -232,7 +232,7 @@ class VolunteersTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '{"on":"Yes","off":"No","checked":"false"}',
-                'order'        => 16,
+                'order'        => 18,
             ],
             'created_at' => [
                 'type'         => 'timestamp',

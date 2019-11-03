@@ -30,21 +30,22 @@ class TimeEntriesTableSeeder extends Seeder
                 'details'      => '{}',
                 'order'        => 1,
             ],
-            'child_belongsto_participant_relationship' => [
+
+            'time_entry_belongsto_volunteer_relationship' => [
                 'type'         => 'relationship',
-                'display_name' => 'Participant',
+                'display_name' => 'Volunteer',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"model":"\\\App\\\Models\\\Participant","table":"participants","type":"belongsTo","column":"participant_id","key":"id","label":"first_name","pivot_table":"children","pivot":"0","taggable":null}',
+                'details'      => '{"model":"\\\App\\\Volunteer","table":"volunteers","type":"belongsTo","column":"volunteer_id","key":"id","label":"first_name"}',
                 'order'        => 2,
-            ],
-            'participant_id' => [
+            ] ,
+            'volunteer_id' => [
                 'type'         => 'text',
-                'display_name' => 'participant_id',
+                'display_name' => 'volunteer_id',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -66,7 +67,7 @@ class TimeEntriesTableSeeder extends Seeder
                 'details'      => '{}',
                 'order'        => 6,
             ],
-            'duration' => [
+            'duration_hours' => [
                 'type'         => 'number',
                 'display_name' => 'Hours Volunteered Today',
                 'required'     => 1,
