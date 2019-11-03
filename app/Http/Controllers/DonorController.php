@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Donor;
-use App\Volunteer;
+use App\Models\Participant;
+use App\Models\Volunteer;
+use Illuminate\Support\Facades\Log;
 
 class DonorController extends Controller
 {
@@ -24,6 +26,28 @@ class DonorController extends Controller
         $donor->city = $volunteer->city;
         $donor->state = $volunteer->state;
         $donor->zip = $volunteer->zip;
+
+        $donor->save();
+
+        return redirect()->route('voyager.donors.show', ['donor' => $donor]);
+    }
+
+    public function createFromParticipant($participantId)
+    {
+        $participant = Participant::findOrFail($participantId);
+
+        $donor = new Donor;
+
+        $donor->first_name = $participant->firstName;
+        $donor->last_name = $participant->lastName;
+        $donor->email = $participant->email;
+        $donor->phone_number = $participant->phone;
+        $donor->county = $participant->county;
+        $donor->line_1 = $participant->line_1;
+        $donor->line_2 = $participant->line_2;
+        $donor->city = $participant->city;
+        $donor->state = $participant->state;
+        $donor->zip = $participant->zip;
 
         $donor->save();
 
