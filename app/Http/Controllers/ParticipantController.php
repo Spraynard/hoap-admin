@@ -2,27 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\Participant;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ParticipantFormSubmission;
 
 use Illuminate\Http\Request;
 
 class ParticipantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // $participants = Participant::orderBy('created_at', 'asc')->get();
-        // // return Participant::where('firstname', 'Jane')->get();
-        // // If using DB
-        // // $participants = DB::select(SELECT * FROM participants);
-        // // $participants = Participant::orderBy('created_at', 'asc')->paginate(10);
-        // return view('participants.index')->with('participants', $participants);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +29,10 @@ class ParticipantController extends Controller
     {
         $this->validate($request, [
             'first_name'=>'required',
-            'last_name'=>'required'
+            'last_name'=>'required',
+            'number_of_children' => 'required|numeric',
+            'dob' => 'required|date',
+            'phone' => 'required'
 
         ]);
 
@@ -63,55 +52,12 @@ class ParticipantController extends Controller
         $participant->number_of_children = $request->input('number_of_children') ? $request->input('number_of_children') : "";
         $participant->referrer = $request->input('referrer') ? $request->input('referrer') : "";
 
-        $participant->save();
+        $saved = $participant->save();
+        if($saved && env('FORM_SUBMISSION_EMAIL')) {
+            Mail::to(env('FORM_SUBMISSION_EMAIL'))->send(new ParticipantFormSubmission($participant));
+        }
 
 
-        return redirect('/participants')->with('success', 'Participant Created');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // $participant = Participant::find($id);
-        // return view('participants.show')->with('participant', $participant);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->back()->with('success', 'Form successfully submitted!');
     }
 }

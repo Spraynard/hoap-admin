@@ -11,16 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/form', function () {
-    return view('form');
-});
+Voyager::routes();
 
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+Route::group(['prefix' => 'public'], function() {
+    Route::get('participants', function() {
+        return redirect()->route('participants.signup');
+    });
+    Route::get('participants/signup', 'ParticipantController@create')
+        ->name('participants.signup');
+    Route::post('participants/signup', 'ParticipantController@store');
 });
 
 Route::resource('participants', 'ParticipantController');
