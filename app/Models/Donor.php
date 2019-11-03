@@ -10,8 +10,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Donor extends Model
 {
+    public $additional_attributes = ['full_name'];
+
     public function donations()
     {
     	return $this->hasMany(Donation::class);
+    }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }
