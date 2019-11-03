@@ -28,7 +28,7 @@ class CreateVolunteersTable extends Migration
             $table->string('email'); // validation?
             $table->string('phone'); // validation?
 
-            $table->date('start-date')
+            $table->date('start_date')
                 ->nullable();
             $table->boolean('active')
                 ->default(false);
