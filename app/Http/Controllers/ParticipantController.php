@@ -56,7 +56,7 @@ class ParticipantController extends Controller
 
         if( $saved )
         {
-            Mail::to(config('mail.hoap_administrator_email'))->send(new ParticipantFormSubmission($participant));
+            Mail::send(new ParticipantFormSubmission($participant));
         }
 
         return redirect()->back()->with('success', 'Form successfully submitted!');

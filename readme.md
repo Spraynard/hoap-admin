@@ -103,6 +103,14 @@ Aside from the specific metrics that are listed with the individual demographic,
 
 CSV dumps of model data.
 
+
+### Developer Notes
+
+#### Creating base administrator user
+
+In order to create an administrator user, you must use the command:
+`php artisan voyager:admin --create` and then go through all of the steps needed
+
 ## Authors and Acknowledgement
 
 To the people listed below, thank you for helping to make this project become a reality for HOAP Inc.
