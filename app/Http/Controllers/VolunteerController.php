@@ -10,11 +10,8 @@ class VolunteerController extends Controller
 {
     public function createFromDonor($donorId)
     {
-        $dnr = Donor::find($donorId);
-
-//        echo print_r($dnr);
-//        echo "</br>";
-
+        $dnr = Donor::findOrFail($donorId);
+        
         $vol = new Volunteer;
 
         $vol->firstName = $dnr->first_name;
@@ -33,8 +30,6 @@ class VolunteerController extends Controller
         $dataTypeContent = $vol;
 
         $isModelTranslatable = false;
-
-//        echo print_r($dataTypeContent); die;
 
         return view('voyager::bread.edit-add', compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
