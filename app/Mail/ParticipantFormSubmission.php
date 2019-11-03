@@ -34,6 +34,8 @@ class ParticipantFormSubmission extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.participant.submission');
+        return $this->from(config('mail.from.address'))
+                    ->to(config('mail.hoap_administrator_email'))
+                    ->markdown('emails.participant.submission');
     }
 }

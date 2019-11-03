@@ -53,10 +53,11 @@ class ParticipantController extends Controller
         $participant->referrer = $request->input('referrer') ? $request->input('referrer') : "";
 
         $saved = $participant->save();
-        if($saved && env('FORM_SUBMISSION_EMAIL')) {
-            Mail::to(env('FORM_SUBMISSION_EMAIL'))->send(new ParticipantFormSubmission($participant));
-        }
 
+        if( $saved )
+        {
+            Mail::send(new ParticipantFormSubmission($participant));
+        }
 
         return redirect()->back()->with('success', 'Form successfully submitted!');
     }
