@@ -21,3 +21,8 @@ Route::group(['prefix' => 'public'], function() {
         ->name('participants.signup');
     Route::post('participants/signup', 'ParticipantController@store');
 });
+
+Route::resource('participants', 'ParticipantController');
+
+Route::get('donor/create_from_volunteer/{id}', 'DonorController@createFromVolunteer')->name('donor.createFromVolunteer');
+Route::get('volunteer/create_from_donor/{id}', 'VolunteerController@createFromDonor')->name('volunteer.createFromDonor');
