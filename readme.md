@@ -101,11 +101,15 @@ Aside from the specific metrics that are listed with the individual demographic,
 
 ### Reports
 
-Administrators should be able to push a button that e-mails (and/or puts up for download) a report of most if not all of the information that we have, most likely in a 1 month, 3 month, and 6 month window.
+CSV dumps of model data.
 
-This most likely will involve some stored procedures within the database?
 
-*Implementation Details TBD*
+### Developer Notes
+
+#### Creating base administrator user
+
+In order to create an administrator user, you must use the command:
+`php artisan voyager:admin --create` and then go through all of the steps needed
 
 ## Authors and Acknowledgement
 

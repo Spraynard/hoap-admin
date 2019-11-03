@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Voyager::routes();
+
+Route::group(['prefix' => 'public'], function() {
+    Route::get('participants', function() {
+        return redirect()->route('participants.signup');
+    });
+    Route::get('participants/signup', 'ParticipantController@create')
+        ->name('participants.signup');
+    Route::post('participants/signup', 'ParticipantController@store');
 });
+
+Route::get('donor/create_from_volunteer/{id}', 'DonorController@createFromVolunteer')->name('donor.createFromVolunteer');
+Route::get('donor/create_from_participant/{id}', 'DonorController@createFromParticipant')->name('donor.createFromParticipant');
+Route::get('volunteer/create_from_donor/{id}', 'VolunteerController@createFromDonor')->name('volunteer.createFromDonor');
+Route::get('volunteer/create_from_participant/{id}', 'VolunteerController@createFromParticipant')->name('volunteer.createFromParticipant');
