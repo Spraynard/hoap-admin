@@ -111,6 +111,7 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
+                // 'details'      => '{"default":"", "options":{"":"(Select One)", "male":"Male", "female":"Female", "other":"Other", "unknown":"Unknown"}}',
                 'details'      => json_encode([
                     "validation" => [
                         "rule" => ["required"]
@@ -372,7 +373,7 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 // 'details'      => '{"default":"applicant","options":{"participant":"Participant","applicant":"Applicant"}}',
                 'details'      => json_encode([
                     "validation" => [
-                        "rule" => ["numeric", "min:0"]
+                        "rule" => ["required"]
                     ],
                     "default" => "applicant",
                     "options" => ["participant" => "Participant", "applicant" => "Applicant"]
