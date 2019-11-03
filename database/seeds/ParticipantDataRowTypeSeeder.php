@@ -39,7 +39,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 2,
             ],
             'last_name' => [
@@ -51,7 +55,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ]
+                ]),
                 'order'        => 3,
             ],
             'participant_belongstomany_program_relationship' =>  [
@@ -87,7 +95,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required", "date"]
+                    ]
+                ]),
                 'order'        => 6,
             ],
             'gender' => [
@@ -99,7 +111,14 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"default":"","options":{"":"(Select One)","male":"Male","female":"Female","other":"Other"}}',
+                // 'details'      => '{"default":"", "options":{"":"(Select One)", "male":"Male", "female":"Female", "other":"Other", "unknown":"Unknown"}}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ],
+                    "default" => "",
+                    "options" => ["" => "(Select One)", "male" => "Male", "female" => "Female", "other" => "Other", "unknown" => "Unknown"]
+                ]),
                 'order'        => 7,
             ],
             'ethnicity' => [
@@ -111,7 +130,15 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"default":"","options":{"":"(Select One)","White":"White","Hispanic":"Hispanic","Black":"Black", "Asian or Pacific Islander": "Asian or Pacific Islander", "Native American or Alaskan Native": "Native American or Alaskan Native", "Other": "Other"}}',
+                // 'details'      => '{"default":"","options":{"":"(Select One)","White":"White","Hispanic":"Hispanic","Black":"Black", "Asian or Pacific Islander": "Asian or Pacific Islander", "Native American or Alaskan Native": "Native American or Alaskan Native", "Other": "Other"}}',
+
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ],
+                    "default" => "",
+                    "options" => ["" => "(Select One)", "White" => "White", "Hispanic" => "Hispanic", "Black" => "Black", "Asian or Pacific Islander" => "Asian or Pacific Islander", "Native American or Alaskan Native" => "Native American or Alaskan Native", "Other" => "Other", "unknown" => "Unknown"]
+                ]),
                 'order'        => 7,
             ],
             'email' => [
@@ -123,7 +150,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["email"]
+                    ]
+                ]),
                 'order'        => 8,
             ],
             'phone' => [
@@ -207,7 +238,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["numeric"]
+                    ]
+                ]),
                 'order'        => 15,
             ],
             'ok_to_text' => [
@@ -219,7 +254,15 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"on":"Yes","off":"No","checked":"false"}',
+                // 'details'      => '{"on":"Yes","off":"No","checked":"false"}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ],
+                    "on" => "Yes",
+                    "off" => "No",
+                    "checked" => "false"
+                ]),
                 'order'        => 16,
             ],
             'last_grade_completed' => [
@@ -255,7 +298,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["numeric", "min:0", "max:99"]
+                    ]
+                ]),
                 'order'        => 19,
             ],
             'annual_income' => [
@@ -267,7 +314,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["numeric", "min:0"]
+                    ]
+                ]),
                 'order'        => 20,
             ],
             'additional_services' => [
@@ -303,7 +354,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["date"]
+                    ]
+                ]),
                 'order'        => 23,
             ],
             'status' => [
@@ -315,7 +370,14 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"default":"applicant","options":{"participant":"Participant","applicant":"Applicant"}}',
+                // 'details'      => '{"default":"applicant","options":{"participant":"Participant","applicant":"Applicant"}}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ],
+                    "default" => "applicant",
+                    "options" => ["participant" => "Participant", "applicant" => "Applicant"]
+                ]),
                 'order'        => 24,
             ],
             'exit_date' => [
@@ -327,7 +389,11 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["date"]
+                    ]
+                ]),
                 'order'        => 25,
             ],
             'created_at' => [
@@ -357,8 +423,8 @@ class ParticipantDataRowTypeSeeder extends Seeder
         ];
 
         $dataType = $this->dataType('slug', 'participants');
-        foreach($dataRows as $field => $values) {
-            $this->dataRow($dataType,$field,$values);
+        foreach ($dataRows as $field => $values) {
+            $this->dataRow($dataType, $field, $values);
         }
 
         $this->permissions();
@@ -390,10 +456,10 @@ class ParticipantDataRowTypeSeeder extends Seeder
             'details'               => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}'
         ])->save();
 
-        if(!$dataType->exists) {
-            $this->command->info(sprintf('Data type "%s" created',$for));
+        if (!$dataType->exists) {
+            $this->command->info(sprintf('Data type "%s" created', $for));
         } else {
-            $this->command->info(sprintf('Data type "%s" updated',$for));
+            $this->command->info(sprintf('Data type "%s" updated', $for));
         }
 
         return $dataType;
@@ -416,14 +482,15 @@ class ParticipantDataRowTypeSeeder extends Seeder
             'field'        => $field,
         ]);
         $dataRow->fill($data)->save();
-        if(!$dataRow->exists) {
-            $this->command->info(sprintf('Data row "%s" for type "%s" created.',$field,$type->slug));
+        if (!$dataRow->exists) {
+            $this->command->info(sprintf('Data row "%s" for type "%s" created.', $field, $type->slug));
         } else {
-            $this->command->info(sprintf('Data row "%s" for type "%s" updated.',$field,$type->slug));
+            $this->command->info(sprintf('Data row "%s" for type "%s" updated.', $field, $type->slug));
         }
     }
 
-    public function permissions() {
+    public function permissions()
+    {
         $keys = [
             'browse_participants',
             'read_participants',
@@ -437,27 +504,26 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'key'        => $key,
                 'table_name' => 'participants',
             ]);
-            
-            if(!$permission->exists) {
+
+            if (!$permission->exists) {
                 $permission->save();
             }
             $permission->roles()->sync($role);
-            
         }
     }
 
     public function menu()
     {
         $menu = Menu::where('name', 'admin')->firstOrFail();
-        $lastMenuItem = MenuItem::where('menu_id',$menu->id)->orderBy('order','DESC')->first();
+        $lastMenuItem = MenuItem::where('menu_id', $menu->id)->orderBy('order', 'DESC')->first();
 
         $order = 1;
-        if($lastMenuItem) {
+        if ($lastMenuItem) {
             $order = $lastMenuItem->order + 1;
         }
-        $menuItem = MenuItem::where('menu_id',$menu->id)->where('title','Participants')->first();
+        $menuItem = MenuItem::where('menu_id', $menu->id)->where('title', 'Participants')->first();
 
-        if(!$menuItem) {
+        if (!$menuItem) {
             $menuItem = MenuItem::create([
                 'menu_id' => $menu->id,
                 'title'   => 'Participants',
@@ -468,6 +534,5 @@ class ParticipantDataRowTypeSeeder extends Seeder
                 'order' => $order,
             ]);
         }
-
     }
 }
