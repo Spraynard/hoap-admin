@@ -1,6 +1,11 @@
 <?php
 
 return [
+    /*
+    | Main hoap website url
+    |
+    */
+    'hoap_main' => env('MAIN_HOAP_ADDRESS', 'https://www.hoapinc.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -13,7 +18,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Hoap Admin'),
 
     /*
     |--------------------------------------------------------------------------
