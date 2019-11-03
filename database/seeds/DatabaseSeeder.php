@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(VolunteersTableSeeder::class);
         $this->call(TimeEntriesTableSeeder::class);
         $this->call(DonorDataRowTypeSeeder::class);
+        $this->call(DonationsDataRowTypeSeeder::class);
     }
 }
