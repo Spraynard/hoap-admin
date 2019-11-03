@@ -1,5 +1,5 @@
 {
-    "name": "hoap-admin",
+    "name": "hoap/admin",
     "type": "project",
     "description": "Administrative Application for HOAP Inc.",
     "keywords": [
