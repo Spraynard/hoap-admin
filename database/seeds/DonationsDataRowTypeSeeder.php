@@ -87,7 +87,10 @@ class DonationsDataRowTypeSeeder extends Seeder
                 'details'      => json_encode([
                     // "validation" => [
                     //     "rule" => ["required"]
-                    // ]
+                    // ],
+                    "on" => "Yes",
+                    "off" => "No",
+                    "checked" => "false"
                 ]),
                 'order'        => 18,
             ],
