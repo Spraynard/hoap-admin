@@ -48,7 +48,7 @@ class ParticipantController extends Controller
         $participant->ok_to_text = $request->input('ok_to_text') ? true : false;
         $participant->last_grade_completed = $request->input('last_grade_completed') ? $request->input('last_grade_completed') : "";
         $participant->employment_status = $request->input('employment_status') ? $request->input('employment_status') : "";
-        $participant->annual_income = $request->input('annual_income') ? (double) $request->input('annual_income') : 0;
+        $participant->annual_income = $request->input('annual_income') ? (double) $request->input('annual_income') : null;
         $participant->number_of_children = $request->input('number_of_children') ? $request->input('number_of_children') : "";
         $participant->referrer = $request->input('referrer') ? $request->input('referrer') : "";
 
