@@ -11,11 +11,15 @@ RUN echo $TZ > /etc/timezone && \
   apt-get clean
 
 RUN apt-get update && apt-get install -y \
+ git \
  php7.2-fpm \
  php-curl \
+ php7.2-zip \
  php-gd \
  php-intl \
  php-xml \
+ php-mysql \
+ php-mbstring \
  php7.2-json \
  php7.2-opcache \
  php7.2-mysql \
