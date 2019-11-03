@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class Volunteer extends Model
      */
     public function timeEntries()
     {
-        return $this->hasMany('App\TimeEntry');
+        return $this->hasMany('App\Models\TimeEntry');
     }
 
     public function getFullNameAttribute()
