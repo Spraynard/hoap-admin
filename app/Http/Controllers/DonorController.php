@@ -38,8 +38,8 @@ class DonorController extends Controller
 
         $donor = new Donor;
 
-        $donor->first_name = $participant->firstName;
-        $donor->last_name = $participant->lastName;
+        $donor->first_name = $participant->first_name;
+        $donor->last_name = $participant->first_name;
         $donor->email = $participant->email;
         $donor->phone_number = $participant->phone;
         $donor->county = $participant->county;
