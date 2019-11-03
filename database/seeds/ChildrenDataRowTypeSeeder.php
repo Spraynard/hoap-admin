@@ -87,7 +87,11 @@ class ChildDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required", "date"]
+                    ]
+                ]),
                 'order'        => 6,
             ],
             'gender' => [
@@ -99,7 +103,13 @@ class ChildDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"default":"","options":{"":"(Select One)","male":"Male","female":"Female","other":"Other","unknown":"Unknown"}}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["required"]
+                    ],
+                    "default" => "",
+                    "options" => ["" => "(Select One)", "male" => "Male", "female" => "Female", "other" => "Other", "unknown" => "Unknown"]
+                ]),
                 'order'        => 7,
             ],
             'email' => [
@@ -111,7 +121,11 @@ class ChildDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["email"]
+                    ]
+                ]),
                 'order'        => 8,
             ],
             'phone' => [
@@ -231,7 +245,11 @@ class ChildDataRowTypeSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{}',
+                'details'      => json_encode([
+                    "validation" => [
+                        "rule" => ["numeric"]
+                    ]
+                ]),
                 'order'        => 18,
             ],
             'notes' => [
@@ -273,8 +291,8 @@ class ChildDataRowTypeSeeder extends Seeder
         ];
 
         $dataType = $this->dataType('slug', 'children');
-        foreach($dataRows as $field => $values) {
-            $this->dataRow($dataType,$field,$values);
+        foreach ($dataRows as $field => $values) {
+            $this->dataRow($dataType, $field, $values);
         }
 
         $this->permissions();
@@ -306,10 +324,10 @@ class ChildDataRowTypeSeeder extends Seeder
             'details'               => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}'
         ])->save();
 
-        if(!$dataType->exists) {
-            $this->command->info(sprintf('Data type "%s" created',$for));
+        if (!$dataType->exists) {
+            $this->command->info(sprintf('Data type "%s" created', $for));
         } else {
-            $this->command->info(sprintf('Data type "%s" updated',$for));
+            $this->command->info(sprintf('Data type "%s" updated', $for));
         }
 
         return $dataType;
@@ -332,14 +350,15 @@ class ChildDataRowTypeSeeder extends Seeder
             'field'        => $field,
         ]);
         $dataRow->fill($data)->save();
-        if(!$dataRow->exists) {
-            $this->command->info(sprintf('Data row "%s" for type "%s" created.',$field,$type->slug));
+        if (!$dataRow->exists) {
+            $this->command->info(sprintf('Data row "%s" for type "%s" created.', $field, $type->slug));
         } else {
-            $this->command->info(sprintf('Data row "%s" for type "%s" updated.',$field,$type->slug));
+            $this->command->info(sprintf('Data row "%s" for type "%s" updated.', $field, $type->slug));
         }
     }
 
-    public function permissions() {
+    public function permissions()
+    {
         $keys = [
             'browse_children',
             'read_children',
@@ -353,27 +372,26 @@ class ChildDataRowTypeSeeder extends Seeder
                 'key'        => $key,
                 'table_name' => 'children',
             ]);
-            
-            if(!$permission->exists) {
+
+            if (!$permission->exists) {
                 $permission->save();
             }
             $permission->roles()->sync($role);
-            
         }
     }
 
     public function menu()
     {
         $menu = Menu::where('name', 'admin')->firstOrFail();
-        $lastMenuItem = MenuItem::where('menu_id',$menu->id)->orderBy('order','DESC')->first();
+        $lastMenuItem = MenuItem::where('menu_id', $menu->id)->orderBy('order', 'DESC')->first();
 
         $order = 1;
-        if($lastMenuItem) {
+        if ($lastMenuItem) {
             $order = $lastMenuItem->order + 1;
         }
-        $menuItem = MenuItem::where('menu_id',$menu->id)->where('title','Children')->first();
+        $menuItem = MenuItem::where('menu_id', $menu->id)->where('title', 'Children')->first();
 
-        if(!$menuItem) {
+        if (!$menuItem) {
             $menuItem = MenuItem::create([
                 'menu_id' => $menu->id,
                 'title'   => 'Children',
@@ -384,6 +402,5 @@ class ChildDataRowTypeSeeder extends Seeder
                 'order' => $order,
             ]);
         }
-
     }
 }
