@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use TimeEntry;
 
 class Volunteer extends Model
 {
@@ -13,7 +14,7 @@ class Volunteer extends Model
      */
     public function timeEntries()
     {
-        return $this->hasMany('App\Models\TimeEntry');
+        return $this->hasMany(TimeEntry::class);
     }
 
     public function getFullNameAttribute()
