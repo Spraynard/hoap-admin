@@ -36,6 +36,13 @@ class ParticipantController extends Controller
 
         ]);
 
+        if ( Participant::where('first_name', $request->input('first_name'))
+                        ->where('last_name', $request->input('last_name'))
+                        ->where('email', $request->input('email'))->first() )
+        {
+            return view('submissions.failure_splash');
+        }
+
         // Create our new Participant
         $participant = new Participant;
 
@@ -59,6 +66,6 @@ class ParticipantController extends Controller
             Mail::send(new ParticipantFormSubmission($participant));
         }
 
-        return redirect()->back()->with('success', 'Form successfully submitted!');
+        return view('submissions.success_splash');
     }
 }
