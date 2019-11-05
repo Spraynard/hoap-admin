@@ -6,9 +6,9 @@ use TCG\Voyager\Widgets\BaseDimmer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
-use App\Models\Participant;
+use App\Models\Donation;
 
-class ParticipantDimmer extends BaseDimmer
+class DonationDimmer extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -23,16 +23,16 @@ class ParticipantDimmer extends BaseDimmer
      */
     public function run()
     {
-        $count = Participant::count();
-        $string = trans_choice('voyager::dimmer.user', $count);
+        $count = Donation::count();
+        $string = trans_choice('dimmer.donation', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-group',
+            'icon'   => 'voyager-dollar',
             'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => __('dimmer.donation_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('voyager::dimmer.user_link_text'),
-                'link' => route('voyager.users.index'),
+                'text' => __('dimmer.donation_button'),
+                'link' => route('voyager.donations.index'),
             ],
             'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
         ]));

@@ -24,15 +24,15 @@ class ParticipantDimmer extends BaseDimmer
     public function run()
     {
         $count = Participant::count();
-        $string = trans_choice('voyager::dimmer.user', $count);
+        $string = trans_choice('dimmer.participant', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-group',
+            'icon'   => 'voyager-person',
             'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => __('dimmer.participant_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('voyager::dimmer.user_link_text'),
-                'link' => route('voyager.users.index'),
+                'text' => __('dimmer.participant_button'),
+                'link' => route('voyager.participants.index'),
             ],
             'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
         ]));
