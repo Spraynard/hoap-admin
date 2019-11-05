@@ -144,7 +144,7 @@ return [
         ],
 
         'widgets' => [
-
+            'App\\Widgets\\ParticipantDimmer'
         ],
 
     ],
