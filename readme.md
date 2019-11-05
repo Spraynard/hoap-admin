@@ -44,6 +44,12 @@ GRANT ALL ON hoap_admin.* TO 'hoap_admin_user'@'localhost'
 
 ## Details / Documentation
 
+### Controllers
+
+Voyager allows us to change the _controller namespace_. This ultimately lets us fully control all aspects of our application by allowing us to make any changes we would like to the controllers themselves, and ultimately, the views.
+
+The current Voyager controller namespace is `App\Http\Controllers\Voyager`. In this directory, you will find all of the files that are in the `vendor/tcg/voyager/src/Http/Controllers/` directory.
+
 ### Models
 
 The items listed below are the general models that are available to have administrative (i.e. CRUD) actions performed on them.
