@@ -27,7 +27,7 @@ return [
     */
 
     'controllers' => [
-        'namespace' => 'App\\Http\\Controllers\\Voyager' //'TCG\\Voyager\\Http\\Controllers',
+        'namespace' => 'TCG\\Voyager\\Http\\Controllers',
     ],
 
     /*
@@ -148,9 +148,8 @@ return [
             'App\\Widgets\\ParticipantDimmer',
             'App\\Widgets\\DonationDimmer',
             'App\\Widgets\\DonorDimmer',
-            // 'App\\Widgets\\VolunteerDimmer'
+            'App\\Widgets\\VolunteerDimmer'
         ],
-
     ],
 
     /*
