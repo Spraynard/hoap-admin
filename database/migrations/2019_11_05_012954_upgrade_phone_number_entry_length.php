@@ -16,6 +16,18 @@ class UpgradePhoneNumberEntryLength extends Migration
         Schema::table('children', function (Blueprint $table) {
             $table->string('phone', 25)->change();
         });
+
+        Schema::table('donors', function (Blueprint $table) {
+            $table->string('phone_number', 25)->nullable()->change();
+        });
+
+        Schema::table('participants', function (Blueprint $table) {
+            $table->string('phone', 25)->nullable()->change();
+        });
+
+        Schema::table('volunteers', function (Blueprint $table) {
+            $table->string('phone', 25)->nullable()->change();
+        });
     }
 
     /**
@@ -26,6 +38,18 @@ class UpgradePhoneNumberEntryLength extends Migration
     public function down()
     {
         Schema::table('children', function (Blueprint $table) {
+            $table->string('phone', 12)->change();
+        });
+
+        Schema::table('donors', function (Blueprint $table) {
+            $table->string('phone_number', 12)->change();
+        });
+
+        Schema::table('participants', function (Blueprint $table) {
+            $table->string('phone', 12)->change();
+        });
+
+        Schema::table('volunteers', function (Blueprint $table) {
             $table->string('phone', 12)->change();
         });
     }
