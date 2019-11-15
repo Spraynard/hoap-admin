@@ -34,7 +34,7 @@ class ChildDimmer extends BaseDimmer
                 'text' => __('dimmer.child_button'),
                 'link' => route('voyager.children.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
+            'image' => asset('images/widgets/children_widget_image.jpg'),
         ]));
     }
 

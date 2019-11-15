@@ -144,10 +144,10 @@ return [
         ],
 
         'widgets' => [
-            'App\\Widgets\\ChildDimmer',
             'App\\Widgets\\ParticipantDimmer',
-            'App\\Widgets\\DonationDimmer',
+            'App\\Widgets\\ChildDimmer',
             'App\\Widgets\\DonorDimmer',
+            'App\\Widgets\\DonationDimmer',
             'App\\Widgets\\VolunteerDimmer'
         ],
     ],

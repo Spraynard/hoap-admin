@@ -10,7 +10,7 @@ return [
 	'donor_button' => 'View Donors',
 
 	'donation' => 'Donation|Donations',
-	'donation_text' => 'You have :count :string in your database.',
+	'donation_text' => 'You have :count :string in your database. With a total of $:donation_amount in donations given this year.',
 	'donation_button' => 'View Donations',
 
 	'participant' => 'Participant|Participants',
@@ -18,6 +18,6 @@ return [
 	'participant_button' => 'View Participants',
 
 	'volunteer' => 'Volunteer|Volunteers',
-	'volunteer_text' => 'You have :count :string in your database.',
+	'volunteer_text' => 'You have :count :string in your database. With a total of :volunteer_hour_count hours volunteered this year.',
 	'volunteer_button' => 'View Volunteers'
 ];

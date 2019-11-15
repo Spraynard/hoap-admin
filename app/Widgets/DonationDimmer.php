@@ -24,17 +24,26 @@ class DonationDimmer extends BaseDimmer
     public function run()
     {
         $count = Donation::count();
+        $donation_amount_this_year = Donation::whereYear('created_at', date('Y'))->get()
+            ->reduce(function ($total_donation_amount, $donation) {
+                return $total_donation_amount + $donation->amount;
+            });
+
         $string = trans_choice('dimmer.donation', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-dollar',
             'title'  => "{$count} {$string}",
-            'text'   => __('dimmer.donation_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => __('dimmer.donation_text', [
+                'count' => $count,
+                'donation_amount' => number_format($donation_amount_this_year, 2),
+                'string' => Str::lower($string)],
+            ),
             'button' => [
                 'text' => __('dimmer.donation_button'),
                 'link' => route('voyager.donations.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
+            'image' => asset('images/widgets/donations_widget_image.jpg'),
         ]));
     }
 

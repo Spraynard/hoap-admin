@@ -34,7 +34,7 @@ class ParticipantDimmer extends BaseDimmer
                 'text' => __('dimmer.participant_button'),
                 'link' => route('voyager.participants.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
+            'image' => asset('images/widgets/participants_widget_image.jpg'),
         ]));
     }
 
