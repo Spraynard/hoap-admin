@@ -13,5 +13,9 @@ class DomainTestDataSeeder extends Seeder
     {
     	$this->call(ParticipantSeeder::class);
         $this->call(ChildSeeder::class);
+        $this->call(DonationSeeder::class);
+        $this->call(DonorSeeder::class);
+        $this->call(TimeEntrySeeder::class);
+        $this->call(VolunteerSeeder::class);
     }
 }
