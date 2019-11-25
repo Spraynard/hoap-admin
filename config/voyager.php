@@ -144,9 +144,12 @@ return [
         ],
 
         'widgets' => [
-
+            'App\\Widgets\\ParticipantDimmer',
+            'App\\Widgets\\ChildDimmer',
+            'App\\Widgets\\DonorDimmer',
+            'App\\Widgets\\DonationDimmer',
+            'App\\Widgets\\VolunteerDimmer'
         ],
-
     ],
 
     /*

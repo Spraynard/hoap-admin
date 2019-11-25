@@ -44,17 +44,23 @@ GRANT ALL ON hoap_admin.* TO 'hoap_admin_user'@'localhost'
 
 ## Details / Documentation
 
+### Controllers
+
+Voyager allows us to change the _controller namespace_. This ultimately lets us fully control all aspects of our application by allowing us to make any changes we would like to the controllers themselves, and ultimately, the views.
+
+While this is good information, we are currently not performing any controller overrides through config.
+
 ### Models
 
 The items listed below are the general models that are available to have administrative (i.e. CRUD) actions performed on them.
 
 #### Person / User Based
 1. User - Administrtors of the HOAP ADMIN site.
-1. Participant - People that HOAP has performed services for in their organization
-1. Child - Children of participants
-1. Donor - People who have donated to HOAP
-1. Volunteer - People performing free services for the HOAP organization
-1. Community Partner - Agencies/contacts with contact information including county & notes section
+2. Participant - People that HOAP has performed services for in their organization
+3. Child - Children of participants
+4. Donor - People who have donated to HOAP
+5. Volunteer - People performing free services for the HOAP organization
+6. Community Partner - Agencies/contacts with contact information including county & notes section
 
 #### Supplemental
 
